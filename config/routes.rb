@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root to: "homes#top"
-
-  resources :post_images, only: [:new, :create, :index, :show]
-
+  devise_for :users
+  resources :post_images, only: [:new, :create, :index, :show, :destroy]
 
   get 'homes/about' => 'homes#about', as: :about
   # 'homes/about'というURLを指定すると、homescontrollerのaboutアクションが実行される about_pathとして
